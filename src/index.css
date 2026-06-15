@@ -1,3 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+@layer utilities {
+  .responsive-photo {
+    object-position: center;
+  }
+
+  @media (max-width: 640px) {
+    .responsive-photo {
+      object-fit: contain;
+      background-color: rgb(17 24 39);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CheckCircle, ChevronDown, ArrowRight, Target, Users, Award, Zap, Shield, Clock } from 'lucide-react';
+import { ChevronDown, ArrowRight, Target, Users, Award, Zap, Clock } from 'lucide-react';
 import { Page } from '../App';
 import AnimatedSection from '../components/AnimatedSection';
+import ResponsiveImage from '../components/ResponsiveImage';
 
 interface ProgramsProps {
   navigate: (page: Page) => void;
@@ -135,10 +136,12 @@ export default function Programs({ navigate }: ProgramsProps) {
       {/* ── PAGE HERO ── */}
       <section className="relative pt-32 pb-24 overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <ResponsiveImage
             src="https://images.pexels.com/photos/7438726/pexels-photo-7438726.jpeg?auto=compress&cs=tinysrgb&w=1920"
             alt="Programs"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
+            loading="eager"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-gray-950/90 via-gray-950/80 to-gray-950" />
         </div>
@@ -172,7 +175,7 @@ export default function Programs({ navigate }: ProgramsProps) {
                   className="bg-gray-900 border border-gray-800 rounded-3xl overflow-hidden group hover:border-yellow-400/30 transition-all duration-300 flex flex-col h-full"
                 >
                   <div className="relative h-52 overflow-hidden">
-                    <img
+                    <ResponsiveImage
                       src={prog.img}
                       alt={prog.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -223,7 +226,7 @@ export default function Programs({ navigate }: ProgramsProps) {
       {/* ── WHY CHOOSE US ── */}
       <section className="py-24 bg-gray-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
-          <img src="https://images.pexels.com/photos/2202685/pexels-photo-2202685.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="" className="w-full h-full object-cover" />
+          <ResponsiveImage src="https://images.pexels.com/photos/2202685/pexels-photo-2202685.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="" className="w-full h-full object-cover" sizes="100vw" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <AnimatedSection className="text-center mb-16">
@@ -312,10 +315,11 @@ export default function Programs({ navigate }: ProgramsProps) {
       {/* ── CTA ── */}
       <section className="relative py-28 overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <ResponsiveImage
             src="https://images.pexels.com/photos/8007094/pexels-photo-8007094.jpeg?auto=compress&cs=tinysrgb&w=1920"
             alt=""
             className="w-full h-full object-cover"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gray-950/85" />
         </div>

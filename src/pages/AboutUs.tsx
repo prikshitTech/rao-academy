@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import { Award, BookOpen, Users, Star, CheckCircle, Linkedin } from 'lucide-react';
+import { Users, CheckCircle } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
+import ResponsiveImage from '../components/ResponsiveImage';
 
 const boardMembers = [
   { name: 'Mr. Satish', role: 'Board Member', img: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300' },
@@ -38,10 +39,12 @@ export default function AboutUs() {
       {/* ── PAGE HERO ── */}
       <section className="relative pt-32 pb-24 overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <ResponsiveImage
             src="https://images.pexels.com/photos/8007094/pexels-photo-8007094.jpeg?auto=compress&cs=tinysrgb&w=1920"
             alt="About Us"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
+            loading="eager"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-gray-950/90 via-gray-950/80 to-gray-950" />
         </div>
@@ -70,10 +73,10 @@ export default function AboutUs() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <AnimatedSection direction="left">
               <div className="relative">
-                <img
+                <ResponsiveImage
                   src="https://images.pexels.com/photos/2202685/pexels-photo-2202685.jpeg?auto=compress&cs=tinysrgb&w=800"
                   alt="Academy"
-                  className="rounded-2xl w-full h-[480px] object-cover shadow-2xl"
+                  className="responsive-photo rounded-2xl w-full h-[360px] sm:h-[430px] lg:h-[480px] object-cover shadow-2xl"
                 />
                 <div className="absolute -bottom-8 -right-8 bg-gray-900 border border-yellow-400/30 rounded-2xl p-6 shadow-xl max-w-[240px]">
                   <div className="text-yellow-400 font-black text-3xl mb-1">2024</div>
@@ -110,7 +113,7 @@ export default function AboutUs() {
       {/* ── VISION ── */}
       <section className="py-24 bg-gray-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <img src="https://images.pexels.com/photos/13552498/pexels-photo-13552498.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="" className="w-full h-full object-cover" />
+          <ResponsiveImage src="https://images.pexels.com/photos/13552498/pexels-photo-13552498.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="" className="w-full h-full object-cover" sizes="100vw" />
           <div className="absolute inset-0 bg-gray-900/80" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -133,10 +136,10 @@ export default function AboutUs() {
             </AnimatedSection>
             <AnimatedSection direction="right">
               <div className="relative">
-                <img
+                <ResponsiveImage
                   src="https://images.pexels.com/photos/8007587/pexels-photo-8007587.jpeg?auto=compress&cs=tinysrgb&w=800"
                   alt="Vision"
-                  className="rounded-2xl w-full h-[420px] object-cover shadow-2xl"
+                  className="responsive-photo rounded-2xl w-full h-[340px] sm:h-[390px] lg:h-[420px] object-cover shadow-2xl"
                 />
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-yellow-400/20 to-transparent" />
               </div>

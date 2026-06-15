@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Facebook, Instagram, Youtube, Linkedin, Send, CheckCircle } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
+import ResponsiveImage from '../components/ResponsiveImage';
 
 const locations = [
   {
@@ -43,10 +44,12 @@ export default function Contact() {
       {/* ── PAGE HERO ── */}
       <section className="relative pt-32 pb-24 overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <ResponsiveImage
             src="https://images.pexels.com/photos/2202685/pexels-photo-2202685.jpeg?auto=compress&cs=tinysrgb&w=1920"
             alt="Contact"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
+            loading="eager"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-gray-950/90 via-gray-950/80 to-gray-950" />
         </div>

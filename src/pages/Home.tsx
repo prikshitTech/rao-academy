@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { motion, useInView, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { motion, useInView, AnimatePresence, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import {
-  ChevronLeft, ChevronRight, Star, Award, Users, Target, Zap, Shield,
-  CheckCircle, ArrowRight, Quote, Instagram,
+  Star, Award, Users, Target, Zap, Shield, CheckCircle, ArrowRight, Quote, Instagram,
 } from 'lucide-react';
 import { Page } from '../App';
 import AnimatedSection from '../components/AnimatedSection';
+import ResponsiveImage from '../components/ResponsiveImage';
 
 interface HomeProps {
   navigate: (page: Page) => void;
@@ -83,6 +83,30 @@ const instaPosts = [
 ];
 
 // ── Touch Swipe Hook ──────────────────────────────────────────────────────────
+const heroSrcSet = (src: string, widths = [640, 960, 1280, 1600, 1920]) =>
+  widths.map((width) => `${src.replace(/w=\d+/, `w=${width}`)} ${width}w`).join(', ');
+
+function AnimatedWords({ text, delay = 0 }: { text: string; delay?: number }) {
+  const shouldReduceMotion = useReducedMotion();
+
+  return (
+    <span aria-label={text}>
+      {text.split(' ').map((word, i) => (
+        <motion.span
+          key={`${word}-${i}`}
+          className="inline-block mr-[0.25em]"
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
+          animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: delay + i * 0.055, ease: [0.22, 1, 0.36, 1] }}
+          aria-hidden="true"
+        >
+          {word}
+        </motion.span>
+      ))}
+    </span>
+  );
+}
+
 function useTouchSwipe(onSwipeLeft: () => void, onSwipeRight: () => void) {
   const touchStartX = useRef<number | null>(null);
   const touchStartY = useRef<number | null>(null);
@@ -144,10 +168,13 @@ function ParallaxHero({ navigate }: HomeProps) {
         >
           <motion.img
             src={heroSlides[heroIdx].bg}
+            srcSet={heroSrcSet(heroSlides[heroIdx].bg)}
+            sizes="100vw"
             alt="Hero"
             style={{ y: heroY }}
-            className="w-full h-[115%] object-cover -top-[7%] absolute"
+            className="w-full h-[108%] sm:h-[115%] object-cover object-[58%_center] sm:object-center -top-[4%] sm:-top-[7%] absolute"
             loading="eager"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-gray-950/92 via-gray-950/55 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-gray-950/85 via-transparent to-transparent" />
@@ -194,7 +221,7 @@ function ParallaxHero({ navigate }: HomeProps) {
                 transition={{ delay: 0.35 }}
                 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6"
               >
-                {heroSlides[heroIdx].highlight}
+                <AnimatedWords text={heroSlides[heroIdx].highlight} delay={0.4} />
               </motion.h1>
 
               <motion.p
@@ -247,25 +274,10 @@ function ParallaxHero({ navigate }: HomeProps) {
       </div>
 
       {/* Nav arrows – larger tap targets on mobile */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 z-10 w-11 h-11 sm:w-10 sm:h-10 rounded-full bg-white/10 hover:bg-yellow-400/80 border border-white/20 hover:border-yellow-400 flex items-center justify-center transition-all duration-300 group"
-        aria-label="Previous slide"
-      >
-        <ChevronLeft size={22} className="text-white group-hover:text-gray-950 transition-colors" />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 z-10 w-11 h-11 sm:w-10 sm:h-10 rounded-full bg-white/10 hover:bg-yellow-400/80 border border-white/20 hover:border-yellow-400 flex items-center justify-center transition-all duration-300 group"
-        aria-label="Next slide"
-      >
-        <ChevronRight size={22} className="text-white group-hover:text-gray-950 transition-colors" />
-      </button>
+      
 
       {/* Swipe hint on mobile */}
-      <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-10 sm:hidden flex items-center gap-1 text-white/40 text-xs">
-        <ChevronLeft size={12} /> swipe <ChevronRight size={12} />
-      </div>
+      
     </section>
   );
 }
@@ -358,20 +370,6 @@ function TestimonialCarousel() {
         ))}
       </div>
 
-      <button
-        onClick={prev}
-        className="absolute -left-4 md:-left-14 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center hover:bg-yellow-400 hover:border-yellow-400 transition-all group"
-        aria-label="Previous testimonial"
-      >
-        <ChevronLeft size={18} className="text-white group-hover:text-gray-950 transition-colors" />
-      </button>
-      <button
-        onClick={next}
-        className="absolute -right-4 md:-right-14 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center hover:bg-yellow-400 hover:border-yellow-400 transition-all group"
-        aria-label="Next testimonial"
-      >
-        <ChevronRight size={18} className="text-white group-hover:text-gray-950 transition-colors" />
-      </button>
     </div>
   );
 }
@@ -415,11 +413,10 @@ export default function Home({ navigate }: HomeProps) {
             <AnimatedSection direction="left">
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-br from-yellow-400/10 to-orange-500/5 rounded-3xl blur-xl" />
-                <img
+                <ResponsiveImage
                   src="https://images.pexels.com/photos/8007094/pexels-photo-8007094.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=2"
                   alt="Badminton Academy"
-                  className="relative rounded-2xl w-full object-cover h-[480px] shadow-2xl"
-                  loading="lazy"
+                  className="responsive-photo relative rounded-2xl w-full object-cover h-[360px] sm:h-[430px] lg:h-[480px] shadow-2xl"
                 />
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8, y: 20 }}
@@ -547,11 +544,10 @@ export default function Home({ navigate }: HomeProps) {
       {/* ── CHIEF COACH ── */}
       <section className="py-24 bg-gray-950 relative overflow-hidden">
         <div className="absolute right-0 top-0 bottom-0 w-1/2 opacity-10 pointer-events-none">
-          <img
+          <ResponsiveImage
             src="https://images.pexels.com/photos/8007094/pexels-photo-8007094.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=2"
             alt=""
-            className="w-full h-full object-cover"
-            loading="lazy"
+            className="w-full h-full object-cover object-center"
           />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -597,11 +593,10 @@ export default function Home({ navigate }: HomeProps) {
             <AnimatedSection direction="right">
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-orange-500/20 rounded-3xl blur-2xl" />
-                <img
+                <ResponsiveImage
                   src="https://images.pexels.com/photos/9654720/pexels-photo-9654720.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=2"
                   alt="Chief Coach Kranti Vir"
-                  className="relative rounded-3xl w-full object-cover h-[500px] shadow-2xl"
-                  loading="lazy"
+                  className="responsive-photo relative rounded-3xl w-full object-cover h-[380px] sm:h-[460px] lg:h-[500px] shadow-2xl"
                 />
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -625,11 +620,10 @@ export default function Home({ navigate }: HomeProps) {
         style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%)' }}
       >
         <div className="absolute inset-0">
-          <img
+          <ResponsiveImage
             src="https://images.pexels.com/photos/13552498/pexels-photo-13552498.jpeg?auto=compress&cs=tinysrgb&w=1920&dpr=2"
             alt=""
             className="w-full h-full object-cover opacity-10"
-            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-gray-950/80 via-gray-900/60 to-gray-950/80" />
         </div>
@@ -774,11 +768,10 @@ export default function Home({ navigate }: HomeProps) {
                   whileTap={{ scale: 0.97 }}
                   className="relative aspect-square overflow-hidden rounded-xl group cursor-pointer block"
                 >
-                  <img
+                  <ResponsiveImage
                     src={post.img}
                     alt={post.caption}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-950/90 via-gray-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
                     <p className="text-white text-xs leading-snug">{post.caption}</p>
@@ -809,11 +802,10 @@ export default function Home({ navigate }: HomeProps) {
       {/* ── CTA BANNER ── */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <ResponsiveImage
             src="https://images.pexels.com/photos/2202685/pexels-photo-2202685.jpeg?auto=compress&cs=tinysrgb&w=1920&dpr=2"
             alt=""
             className="w-full h-full object-cover"
-            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-gray-950/95 via-gray-950/80 to-gray-950/95" />
           <div className="absolute inset-0 bg-yellow-400/5" />
