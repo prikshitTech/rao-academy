@@ -32,6 +32,9 @@ const heroSlides = [
   },
 ];
 
+const HERO_SLIDE_INTERVAL = 5000;
+const TESTIMONIAL_SLIDE_INTERVAL = 6000;
+
 const programs = [
   { title: 'Beginner', desc: 'Build a strong foundation with fundamental skills and basic techniques.', days: 'Mon – Fri + Sat & Sun', color: 'from-blue-500 to-cyan-400' },
   { title: 'Basic', desc: 'Refine your skills and improve consistency with structured practice.', days: 'Mon – Fri + Sat & Sun', color: 'from-green-500 to-emerald-400' },
@@ -134,7 +137,6 @@ function useTouchSwipe(onSwipeLeft: () => void, onSwipeRight: () => void) {
 // ── Parallax Hero ─────────────────────────────────────────────────────────────
 function ParallaxHero({ navigate }: HomeProps) {
   const [heroIdx, setHeroIdx] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const heroRef = useRef(null);
   const { scrollY } = useScroll();
   const heroY = useTransform(scrollY, [0, 600], [0, 180]);
@@ -144,18 +146,15 @@ function ParallaxHero({ navigate }: HomeProps) {
   const swipeHandlers = useTouchSwipe(nextSlide, prevSlide);
 
   useEffect(() => {
-    if (!isAutoPlaying) return;
-    const t = setInterval(nextSlide, 5000);
+    const t = window.setInterval(nextSlide, HERO_SLIDE_INTERVAL);
     return () => clearInterval(t);
-  }, [isAutoPlaying, nextSlide]);
+  }, [nextSlide]);
 
   return (
     <section
       ref={heroRef}
       className="relative h-screen min-h-[600px] overflow-hidden"
       {...swipeHandlers}
-      onMouseEnter={() => setIsAutoPlaying(false)}
-      onMouseLeave={() => setIsAutoPlaying(true)}
     >
       <AnimatePresence mode="wait">
         <motion.div
@@ -315,7 +314,7 @@ function TestimonialCarousel() {
   const swipeHandlers = useTouchSwipe(next, prev);
 
   useEffect(() => {
-    const t = setInterval(next, 6000);
+    const t = window.setInterval(next, TESTIMONIAL_SLIDE_INTERVAL);
     return () => clearInterval(t);
   }, [next]);
 
