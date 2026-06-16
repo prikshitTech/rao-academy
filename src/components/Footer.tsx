@@ -32,7 +32,7 @@ export default function Footer({ navigate }: FooterProps) {
             <div className="flex gap-3">
               {[
                 { icon: Facebook, href: 'https://www.facebook.com/people/Rao-Badminton-World/' },
-                { icon: Instagram, href: 'https://www.instagram.com/Raobadmintonworld/' },
+                { icon: Instagram, href: 'https://www.instagram.com/raobadmintonacademy?igsh=MTA0eGxseDBoOHZkZQ==' },
                 { icon: Youtube, href: 'https://www.youtube.com/channel/UCAb9t5zi3YnQGzSjTZKz-_w' },
                 { icon: Linkedin, href: 'https://www.linkedin.com/company/Raobadmintonworld/' },
               ].map((social, i) => (
@@ -98,13 +98,13 @@ export default function Footer({ navigate }: FooterProps) {
               <div className="flex items-start gap-3">
                 <MapPin size={16} className="text-yellow-400 flex-shrink-0 mt-0.5" />
                 <div className="text-gray-500 text-sm leading-snug">
-                  Smash Zone, Tathawade, Pimpri-Chinchwad, Pune, Maharashtra 411057
+                 Rao Badminton Academy, Old Hoshiarpur Road, Opp. Shiv Shankar Cold Store, Lal Singhi, Una, Himachal Pradesh, 174303
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <Phone size={16} className="text-yellow-400 flex-shrink-0" />
-                <a href="tel:+917210099994" className="text-gray-500 hover:text-yellow-400 transition-colors text-sm">
-                  +91 7210099994
+                <a href="tel:+919817780001" className="text-gray-500 hover:text-yellow-400 transition-colors text-sm">
+                  +91 9817780001
                 </a>
               </div>
               <div className="flex items-center gap-3">

@@ -44,7 +44,7 @@ const programs = [
 const testimonials = [
   {
     name: 'Rajesh Kumar',
-    text: 'Rao Badminton World has been an incredible experience. The coaching is top-notch and Coach Kranti\'s attention to detail helped me improve my game tremendously. From basic techniques to advanced strategies, I feel more confident on the court than ever before.',
+    text: 'Rao Badminton World has been an incredible experience. The coaching is top-notch and Coach Sunil\'s attention to detail helped me improve my game tremendously. From basic techniques to advanced strategies, I feel more confident on the court than ever before.',
     rating: 5,
   },
   {
@@ -54,7 +54,7 @@ const testimonials = [
   },
   {
     name: 'Arjun Patel',
-    text: 'Training at Rao Badminton World has taken my game to the next level. Coach Kranti\'s expertise and the academy\'s world-class facilities helped me focus on every aspect of my game. It\'s like a second home to me!',
+    text: 'Training at Rao Badminton World has taken my game to the next level. Coach Sunil\'s expertise and the academy\'s world-class facilities helped me focus on every aspect of my game. It\'s like a second home to me!',
     rating: 5,
   },
   {
@@ -455,7 +455,7 @@ export default function Home({ navigate }: HomeProps) {
                   Where Passion <span className="text-yellow-400">Meets</span> Precision
                 </h2>
                 <p className="text-gray-400 leading-relaxed mb-6 text-lg">
-                  Rao Badminton World is a newly established badminton academy fueled by passion and precision. Founded by Krantivir, an experienced athlete and coach, the academy is dedicated to developing future champions.
+                  Rao Badminton World is a newly established badminton academy fueled by passion and precision. Founded by Sunil Gujjar, an experienced athlete and coach, the academy is dedicated to developing future champions.
                 </p>
                 <p className="text-gray-400 leading-relaxed mb-8">
                   With a focus on dedication, skill development, and sportsmanship, Rao Badminton World provides quality training in a disciplined and motivating environment, empowering athletes to reach their full potential.
@@ -557,7 +557,7 @@ export default function Home({ navigate }: HomeProps) {
                 <div className="inline-flex items-center gap-2 bg-yellow-400/10 border border-yellow-400/30 rounded-full px-4 py-1.5 mb-4">
                   <span className="text-yellow-400 text-sm font-medium">Meet Our Chief Coach</span>
                 </div>
-                <h2 className="text-5xl font-black text-white mb-6">Kranti Vir</h2>
+                <h2 className="text-5xl font-black text-white mb-6">Sunil Gujjar</h2>
                 <div className="space-y-3 mb-8">
                   {[
                     'Olympic Gold Quest (OGQ) Certified – Level 1 & 2 Coach',
@@ -595,7 +595,7 @@ export default function Home({ navigate }: HomeProps) {
                 <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-orange-500/20 rounded-3xl blur-2xl" />
                 <ResponsiveImage
                   src="https://images.pexels.com/photos/9654720/pexels-photo-9654720.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=2"
-                  alt="Chief Coach Kranti Vir"
+                  alt="Chief Coach Sunil Gujjar"
                   className="responsive-photo relative rounded-3xl w-full object-cover h-[380px] sm:h-[460px] lg:h-[500px] shadow-2xl"
                 />
                 <motion.div
@@ -752,7 +752,7 @@ export default function Home({ navigate }: HomeProps) {
           <AnimatedSection className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-yellow-400/10 border border-yellow-400/30 rounded-full px-4 py-1.5 mb-4">
               <Instagram size={16} className="text-yellow-400" />
-              <span className="text-yellow-400 text-sm font-medium">@Raobadmintonworld</span>
+              <span className="text-yellow-400 text-sm font-medium">@raobadmintonacademy</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-white">Follow Our <span className="text-yellow-400">Journey</span></h2>
           </AnimatedSection>
@@ -761,7 +761,7 @@ export default function Home({ navigate }: HomeProps) {
             {instaPosts.map((post, i) => (
               <AnimatedSection key={i} delay={i * 0.06} direction="up">
                 <motion.a
-                  href="https://www.instagram.com/Raobadmintonworld/"
+                  href="https://www.instagram.com/raobadmintonacademy?igsh=MTA0eGxseDBoOHZkZQ=="
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.04 }}
@@ -786,7 +786,7 @@ export default function Home({ navigate }: HomeProps) {
 
           <AnimatedSection className="text-center mt-10">
             <motion.a
-              href="https://www.instagram.com/Raobadmintonworld/"
+              href="https://www.instagram.com/raobadmintonacademy?igsh=MTA0eGxseDBoOHZkZQ=="
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}

@@ -6,24 +6,16 @@ import ResponsiveImage from '../components/ResponsiveImage';
 
 const locations = [
   {
-    name: 'Rao Badminton World, Tathawade',
-    address: 'Smash Zone, Shiv Malhar Colony, Indira High School Rd, near Colours Innovation Academy, next to Courtyard, Tathawade, Pimpri-Chinchwad, Pune, Maharashtra 411057',
-    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.3!2d73.7!3d18.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDM2JzAwLjAiTiA3M8KwNDInMDAuMCJF!5e0!3m2!1sen!2sin!4v1',
+    name: 'Rao Badminton Academy, Una',
+    address: 'Rao Badminton Academy, Old Hoshiarpur Road, opp. Shiv Shankar Cold Store, Lal Singhi, Una Himachal Pradesh, 174303',
   },
   {
-    name: 'Rao Badminton World, Baner',
-    address: 'The Life Sports Academy, Badminton Court, 19/1B/1, Someshwar Wadi Rd, near Hotel Green Park, Ward No. 8, Someshwarwadi, Pashan, Pune, Maharashtra 411008',
-    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782!2d73.78!3d18.55!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDMzJzAwLjAiTiA3M8KwNDYnNDguMCJF!5e0!3m2!1sen!2sin!4v1',
+    name: 'Rao Badminton Academy, Una',
+    address: 'Rao Badminton Academy, Old Hoshiarpur Road, opp. Shiv Shankar Cold Store, Lal Singhi, Una Himachal Pradesh, 174303',
   },
   {
-    name: 'Rao Badminton World, Punawale',
-    address: 'Life Republic Township, opposite R17 Nora Society, Jambhe, Punawale, Pimpri-Chinchwad, Pune - 411033',
-    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782!2d73.7!3d18.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDM2JzAwLjAiTiA3M8KwNDInMDAuMCJF!5e0!3m2!1sen!2sin!4v1',
-  },
-  {
-    name: 'Rao Badminton World, Ambala',
-    address: 'S.A Jain College Ambala City, Ghel Rd, Kamal Vihar, Ambala, Patti Kalalan, Haryana 134003',
-    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3465!2d76.77!3d30.37!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDIyJzEyLjAiTiA3NsKwNDYnMTIuMCJF!5e0!3m2!1sen!2sin!4v1',
+    name: 'Rao Badminton Academy, Una',
+    address: 'Rao Badminton Academy, Old Hoshiarpur Road, opp. Shiv Shankar Cold Store, Lal Singhi, Una Himachal Pradesh, 174303',
   },
 ];
 
@@ -101,8 +93,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <div className="text-gray-400 text-sm mb-1">Call Us</div>
-                      <a href="tel:+917210099994" className="text-white font-semibold hover:text-yellow-400 transition-colors">
-                        +91 7210099994
+                      <a href="tel:+919817780001" className="text-white font-semibold hover:text-yellow-400 transition-colors">
+                        +91 9817780001
                       </a>
                     </div>
                   </div>
@@ -114,7 +106,7 @@ export default function Contact() {
                   <div className="flex gap-3">
                     {[
                       { icon: Facebook, href: 'https://www.facebook.com/people/Rao-Badminton-World/', label: 'Facebook' },
-                      { icon: Instagram, href: 'https://www.instagram.com/Raobadmintonworld/', label: 'Instagram' },
+                      { icon: Instagram, href: 'https://www.instagram.com/raobadmintonacademy?igsh=MTA0eGxseDBoOHZkZQ==', label: 'Instagram' },
                       { icon: Youtube, href: 'https://www.youtube.com/channel/UCAb9t5zi3YnQGzSjTZKz-_w', label: 'YouTube' },
                       { icon: Linkedin, href: 'https://www.linkedin.com/company/Raobadmintonworld/', label: 'LinkedIn' },
                     ].map((social, i) => (
@@ -276,7 +268,7 @@ export default function Contact() {
                   <div className="text-white font-bold text-lg mb-2">{locations[activeLocation].name}</div>
                   <div className="text-gray-400 text-sm max-w-sm mx-auto">{locations[activeLocation].address}</div>
                   <a
-                    href={`https://www.google.com/maps/search/${encodeURIComponent(locations[activeLocation].address)}`}
+                    href="https://maps.app.goo.gl/suMhYy9WymB9jRxGA"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-4 inline-flex items-center gap-2 bg-yellow-400 text-gray-950 font-bold px-6 py-2.5 rounded-full hover:bg-orange-400 transition-colors text-sm"

@@ -21,7 +21,7 @@ const advisoryBoard = [
 ];
 
 const teamMembers = [
-  { name: 'Kranti Vir', role: 'Chief Coach', img: 'https://images.pexels.com/photos/9654720/pexels-photo-9654720.jpeg?auto=compress&cs=tinysrgb&w=400' },
+  { name: 'Sunil Gujjar', role: 'Chief Coach', img: 'https://images.pexels.com/photos/9654720/pexels-photo-9654720.jpeg?auto=compress&cs=tinysrgb&w=400' },
   { name: 'Saumya Singhal', role: 'Senior Coach', img: 'https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=400' },
   { name: 'Kumar Chavan', role: 'Senior Coach', img: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400' },
   { name: 'Deepak Verma', role: 'Senior Coach', img: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400' },
@@ -81,7 +81,7 @@ export default function AboutUs() {
                 <div className="absolute -bottom-8 -right-8 bg-gray-900 border border-yellow-400/30 rounded-2xl p-6 shadow-xl max-w-[240px]">
                   <div className="text-yellow-400 font-black text-3xl mb-1">2024</div>
                   <div className="text-white font-bold text-sm mb-1">Founded with Purpose</div>
-                  <div className="text-gray-400 text-xs">By Krantivir – Certified Olympic Coach</div>
+                  <div className="text-gray-400 text-xs">By Sunil Gujjar – Certified Olympic Coach</div>
                 </div>
               </div>
             </AnimatedSection>
@@ -91,7 +91,7 @@ export default function AboutUs() {
                   Built on <span className="text-yellow-400">Dedication</span>, Strategy & Sportsmanship
                 </h2>
                 <p className="text-gray-400 leading-relaxed mb-5 text-lg">
-                  Rao Badminton World is a newly established badminton academy driven by passion and precision, dedicated to nurturing talent and developing future champions. Founded by Krantivir, an accomplished professional athlete with extensive experience coaching under an Olympian.
+                  Rao Badminton World is a newly established badminton academy driven by passion and precision, dedicated to nurturing talent and developing future champions. Founded by Sunil Gujjar, an accomplished professional athlete with extensive experience coaching under an Olympian.
                 </p>
                 <p className="text-gray-400 leading-relaxed mb-8">
                   The academy embodies his vision of creating a space where dedication, strategic skill development, and sportsmanship thrive. Committed to providing quality training, Rao Badminton World fosters growth and promotes a disciplined yet motivating environment that empowers athletes to reach their fullest potential.
@@ -168,7 +168,7 @@ export default function AboutUs() {
                 <div className="relative h-72 overflow-hidden">
                   <img
                     src="https://images.pexels.com/photos/9654720/pexels-photo-9654720.jpeg?auto=compress&cs=tinysrgb&w=600"
-                    alt="Kranti Vir"
+                    alt="Sunil Gujjar"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent" />
@@ -177,7 +177,7 @@ export default function AboutUs() {
                   </div>
                 </div>
                 <div className="p-8">
-                  <h3 className="text-3xl font-black text-white mb-2">Kranti Vir</h3>
+                  <h3 className="text-3xl font-black text-white mb-2">Sunil Gujjar</h3>
                   <p className="text-yellow-400 font-medium mb-4">Chief Coach & Founder Director</p>
                   <p className="text-gray-400 text-sm leading-relaxed mb-6">
                     Certified Level 1 &amp; 2 Coach by Olympic Gold Quest (OGQ) and Level 1 Coach by the Badminton World Federation (BWF). With over five years of professional coaching experience under the mentorship of an Olympian, he has guided numerous athletes to district, state, and national-level medals.
