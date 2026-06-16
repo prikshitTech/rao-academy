@@ -76,7 +76,7 @@ const instaPosts = [
   { img: 'https://images.pexels.com/photos/7438726/pexels-photo-7438726.jpeg?auto=compress&cs=tinysrgb&w=600&dpr=2', caption: 'Building foundations, creating champions at Rao Badminton World.' },
   { img: 'https://images.pexels.com/photos/2202685/pexels-photo-2202685.jpeg?auto=compress&cs=tinysrgb&w=600&dpr=2', caption: 'Every serve starts a journey. Every rally builds belief.' },
   { img: 'https://images.pexels.com/photos/8007094/pexels-photo-8007094.jpeg?auto=compress&cs=tinysrgb&w=600&dpr=2', caption: 'Discipline is the foundation. Train right. Train with purpose.' },
-  { img: 'https://images.pexels.com/photos/14605729/pexels-photo-14605729.jpeg?auto=compress&cs=tinysrgb&w=600&dpr=2', caption: 'Young athletes. Bright futures. Rao Badminton World Pune.' },
+  { img: 'https://images.pexels.com/photos/14605729/pexels-photo-14605729.jpeg?auto=compress&cs=tinysrgb&w=600&dpr=2', caption: 'Young athletes. Bright futures. Rao Badminton World Una.' },
   { img: 'https://images.pexels.com/photos/8007587/pexels-photo-8007587.jpeg?auto=compress&cs=tinysrgb&w=600&dpr=2', caption: 'Where passion meets precision – come be part of our story.' },
   { img: 'https://images.pexels.com/photos/9654720/pexels-photo-9654720.jpeg?auto=compress&cs=tinysrgb&w=600&dpr=2', caption: 'Rao in one word: FOUNDATION. Building character, confidence.' },
   { img: 'https://images.pexels.com/photos/8007578/pexels-photo-8007578.jpeg?auto=compress&cs=tinysrgb&w=600&dpr=2', caption: 'Not measured in medals but in consistency and commitment.' },
@@ -203,7 +203,7 @@ function ParallaxHero({ navigate }: HomeProps) {
                   transition={{ repeat: Infinity, duration: 2 }}
                   className="w-2 h-2 rounded-full bg-yellow-400"
                 />
-                <span className="text-yellow-400 text-sm font-medium tracking-wide">Rao Badminton World, Pune</span>
+                <span className="text-yellow-400 text-sm font-medium tracking-wide">Rao Badminton World, Una</span>
               </motion.div>
 
               <motion.p

@@ -51,7 +51,7 @@ export default function Navbar({ currentPage, navigate }: NavbarProps) {
             </div>
             <div className="hidden sm:block">
               <div className="text-white font-bold text-lg leading-tight">Rao Badminton World</div>
-              <div className="text-yellow-400 text-xs tracking-widest uppercase">Pune</div>
+              <div className="text-yellow-400 text-xs tracking-widest uppercase">Una</div>
             </div>
           </button>
 

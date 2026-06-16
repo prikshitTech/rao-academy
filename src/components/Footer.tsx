@@ -23,7 +23,7 @@ export default function Footer({ navigate }: FooterProps) {
               </div>
               <div>
                 <div className="text-white font-bold text-lg leading-tight">Rao Badminton World</div>
-                <div className="text-yellow-400 text-xs tracking-widest uppercase">Pune</div>
+                <div className="text-yellow-400 text-xs tracking-widest uppercase">Una, Himachal Pradesh</div>
               </div>
             </button>
             <p className="text-gray-500 text-sm leading-relaxed mb-6">
